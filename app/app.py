@@ -166,15 +166,15 @@ section[data-testid="stSidebar"] .stSelectbox > div > div {
 # ── Load Data ────────────────────────────────────────────────────
 @st.cache_resource
 def load_models():
-    with open('models/lgb_model.pkl', 'rb') as f:
+    with open('app/models/lgb_model.pkl', 'rb') as f:
         lgb_model = pickle.load(f)
-    with open('models/prophet_model.pkl', 'rb') as f:
+    with open('app/models/prophet_model.pkl', 'rb') as f:
         prophet_model = pickle.load(f)
     return lgb_model, prophet_model
 
 @st.cache_data
 def load_data():
-    with open('models/test_data.pkl', 'rb') as f:
+    with open('app/models/test_data.pkl', 'rb') as f:
         return pickle.load(f)
 
 lgb_model, prophet_model = load_models()
